@@ -12,29 +12,84 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const formClose = document.querySelectorAll(".close");
-const firstName = document.getElementById('first').value;
-const lastName = document.getElementById('last').value;
-const email = document.getElementById('email').value;
-const birthDate = document.getElementById('birthdate').value;
-const tournamentQuantity = document.getElementById('quantity').value;
-const location1 = document.getElementById('location1').value;
-const location2 = document.getElementById('location2').value;
-const location3 = document.getElementById('location3').value;
-const location4 = document.getElementById('location4').value;
-const location5 = document.getElementById('location5').value;
-const location6 = document.getElementById('location6').value;
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modalbg.classList.add("dp-block");
+  modalbg.classList.remove("dp-none");
 }
 
 // close modal form on the cross
 function closeModal() {
-  modalbg.style.display = "none";
+  modalbg.classList.add("dp-none");
+  modalbg.classList.remove("dp-block");
 }
 
+// Validation form
+document.getElementById("gameForm").addEventListener("submit", function(e) {
+  let firstName = document.getElementById('first').value;
+  let textFirst = document.getElementById('text-first');
+  let lastName = document.getElementById('last').value;
+  let textLast = document.getElementById('text-last');
+  let email = document.getElementById('email').value;
+  let textEmail = document.getElementById('text-email');
+  let birthDate = document.getElementById('birthdate').value;
+  let textBirth = document.getElementById('text-birth');
+  let tournamentQtt = document.getElementById('quantity').value;
+  let textQtt = document.getElementById('text-qtt');
+  let location1 = document.getElementById('location1');
+  let location2 = document.getElementById('location2');
+  let location3 = document.getElementById('location3');
+  let location4 = document.getElementById('location4');
+  let location5 = document.getElementById('location5');
+  let location6 = document.getElementById('location6');
+  let textLocation = document.getElementById('text-location');
+  let condition = document.getElementById('checkbox1');
+  let textCondition = document.getElementById('text-condition');
+  
 
+  if (firstName.length <= 2) {
+    textFirst.classList.add("dp-block");
+    textFirst.classList.remove("dp-none");
+    e.preventDefault();
+  }
+  if (lastName.length <= 2) {
+    textLast.classList.add("dp-block");
+    textLast.classList.remove("dp-none");
+    e.preventDefault();
+  }
+  if (email == "") {
+    textEmail.classList.add("dp-block");
+    textEmail.classList.remove("dp-none");
+    e.preventDefault();
+  }
+  if (email.indexOf("@", 0) < 0) {
+    textEmail.classList.add("dp-block");
+    textEmail.classList.remove("dp-none");
+    e.preventDefault();
+  }
+  if (email.indexOf(".", 0) < 0) {
+    textEmail.classList.add("dp-block");
+    textEmail.classList.remove("dp-none");
+    e.preventDefault();
+  }
+  if (birthDate == "") {
+    textBirth.classList.add("dp-block");
+    textBirth.classList.remove("dp-none");
+  }
+  if (tournamentQtt == "") {
+    textQtt.classList.add("dp-block");
+    textQtt.classList.remove("dp-none");
+  }
+  if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) {
+    textLocation.classList.add("dp-block");
+    textLocation.classList.remove("dp-none");
+  }
+  if (!condition.checked) {
+    textCondition.classList.add("dp-block");
+    textCondition.classList.remove("dp-none");
+  }
+});

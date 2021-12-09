@@ -30,6 +30,23 @@ img {
   padding-right: 1rem;
 }
 
+.dp-block {
+  display: block!important;
+}
+
+.dp-none {
+  display: none!important;
+}
+
+.text-red {
+  color: red;
+  font-size: 1rem;
+  background-color: rgb(252, 204, 204);
+  border: 1px solid red;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
 .topnav {
   overflow: hidden;
   margin: 3.5%;
@@ -407,7 +424,7 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
+  min-height: 70vh;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -558,7 +575,6 @@ footer {
   }
   .bground {
     background-color: inherit;
-    overflow: inherit;
   }
   .content {
     margin: 72px 0 0 0;
