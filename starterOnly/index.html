@@ -51,19 +51,21 @@
       </button>
     </div>
 
-    <div class="bground">
+    <div class="bground" id="formBground">
       <div class="content">
         <span class="close" onclick="closeModal()"></span>
         <div class="modal-body">
           <form id="gameForm" name="reserve" action="index.html" method="get">
             <div class="formData">
               <label>Prénom</label><br>
-              <span id="text-first" class="dp-none text-red">Veuillez entrer 2 caractères ou plus pour le champ du prénom.</span>
+              <span id="text-first" class="dp-none text-red">Veuillez entrer 2 caractères ou plus pour le champ du
+                prénom.</span>
               <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
             </div>
             <div class="formData">
               <label>Nom</label><br>
-              <span id="text-last" class="dp-none text-red">Veuillez entrer 2 caractères ou plus pour le champ du nom.</span>
+              <span id="text-last" class="dp-none text-red">Veuillez entrer 2 caractères ou plus pour le champ du
+                nom.</span>
               <input class="text-control" type="text" id="last" name="last" /><br>
             </div>
             <div class="formData">
@@ -82,36 +84,38 @@
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
             </div>
             <p class="text-label">Quelles villes ?</p>
-            <span id="text-location" class="dp-none text-red">Vous devez sélectionner la ville où vous souhaitez participer.</span>
+            <span id="text-location" class="dp-none text-red">Vous devez sélectionner la ville où vous souhaitez
+              participer.</span>
             <div class="formData">
-              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
+              <input class="checkbox-input" type="checkbox" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
                 New York</label>
-              <input class="checkbox-input" type="radio" id="location2" name="location" value="San Francisco" />
+              <input class="checkbox-input" type="checkbox" id="location2" name="location" value="San Francisco" />
               <label class="checkbox-label" for="location2">
                 <span class="checkbox-icon"></span>
                 San Francisco</label>
-              <input class="checkbox-input" type="radio" id="location3" name="location" value="Seattle" />
+              <input class="checkbox-input" type="checkbox" id="location3" name="location" value="Seattle" />
               <label class="checkbox-label" for="location3">
                 <span class="checkbox-icon"></span>
                 Seattle</label>
-              <input class="checkbox-input" type="radio" id="location4" name="location" value="Chicago" />
+              <input class="checkbox-input" type="checkbox" id="location4" name="location" value="Chicago" />
               <label class="checkbox-label" for="location4">
                 <span class="checkbox-icon"></span>
                 Chicago</label>
-              <input class="checkbox-input" type="radio" id="location5" name="location" value="Boston" />
+              <input class="checkbox-input" type="checkbox" id="location5" name="location" value="Boston" />
               <label class="checkbox-label" for="location5">
                 <span class="checkbox-icon"></span>
                 Boston</label>
-              <input class="checkbox-input" type="radio" id="location6" name="location" value="Portland" />
+              <input class="checkbox-input" type="checkbox" id="location6" name="location" value="Portland" />
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
 
             <div class="formData">
-              <span id="text-condition" class="dp-none text-red">Vous devez vérifier que vous acceptez les termes et conditions.</span>
+              <span id="text-condition" class="dp-none text-red">Vous devez vérifier que vous acceptez les termes et
+                conditions.</span>
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
@@ -125,9 +129,20 @@
               </label>
               <br>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <input id="submit-btn" class="btn-submit" type="submit" class="button" value="C'est parti" />
           </form>
         </div>
+      </div>
+    </div>
+
+    <div class="bground-thanks dp-none" id="game-thanks">
+      <div class="content-thanks">
+        <span class="close" onclick="closeThanks()"></span>
+        <div class="div-thanks">
+          <p>Merci d’avoir soumis votre inscription</p>
+        </div>
+
+        <p class="btn-submit btn-thanks" id="btn-thanks">Fermer</p>
       </div>
     </div>
   </main>
