@@ -66,12 +66,14 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   let textLocation = document.getElementById('text-location');
   let condition = document.getElementById('checkbox1');
   let textCondition = document.getElementById('text-condition');
-  
+  // Regex verification name and email
   let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   let regexName = /^[a-zA-Z ]{2,30}$/
 
+  // Not sending form
   e.preventDefault();
 
+  // Firstname Verifiaction
   if (firstName.length <= 2 || !firstName.match(regexName)) {
     textFirst.classList.add("dp-block");
     textFirst.classList.remove("dp-none");
@@ -80,6 +82,7 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textFirst.classList.add("dp-none");
   }
+  // Lastname Verifiaction
   if (lastName.length <= 2 || !lastName.match(regexName)) {
     textLast.classList.add("dp-block");
     textLast.classList.remove("dp-none");
@@ -88,6 +91,7 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textLast.classList.add("dp-none");
   }
+  // Email Verifiaction
   if (email == "" || !email.match(regexEmail)) {
     textEmail.classList.add("dp-block");
     textEmail.classList.remove("dp-none");
@@ -96,6 +100,7 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textEmail.classList.add("dp-none");
   }
+  // Birthdate Verifiaction
   if (birthDate == "") {
     textBirth.classList.add("dp-block");
     textBirth.classList.remove("dp-none");
@@ -104,6 +109,7 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textBirth.classList.add("dp-none");
   }
+  // Tounament quantitie Verifiaction
   if (tournamentQtt == "") {
     textQtt.classList.add("dp-block");
     textQtt.classList.remove("dp-none");
@@ -112,6 +118,7 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textQtt.classList.add("dp-none");
   }
+  // Tournament location Verifiaction
   if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) {
     textLocation.classList.add("dp-block");
     textLocation.classList.remove("dp-none");
@@ -120,6 +127,7 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textLocation.classList.add("dp-none");
   }
+  // Condition Verifiaction
   if (!condition.checked) {
     textCondition.classList.add("dp-block");
     textCondition.classList.remove("dp-none");
@@ -128,13 +136,14 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   } else {
     textCondition.classList.add("dp-none");
   }
+  // Submit Verifiaction and show thanks pop up
   if (gameForm.submit) {
+    gameForm.reset();
     gameThanks.classList.add("dp-block");
     gameThanks.classList.remove("dp-none");
     formBground.classList.remove("dp-block");
     formBground.classList.add("dp-none");
     e.preventDefault();
     return false;
-    
   }
 });
