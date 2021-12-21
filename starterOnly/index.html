@@ -60,34 +60,32 @@
           <form id="gameForm" name="reserve" action="index.html" method="get" autocomplete="off">
             <div class="formData">
               <label>Prénom</label><br>
+              <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
               <span id="text-first" class="dp-none text-red">Veuillez entrer 2 caractères ou plus pour le champ du
                 prénom.</span>
-              <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
             </div>
             <div class="formData">
               <label>Nom</label><br>
+              <input class="text-control" type="text" id="last" name="last" /><br>
               <span id="text-last" class="dp-none text-red">Veuillez entrer 2 caractères ou plus pour le champ du
                 nom.</span>
-              <input class="text-control" type="text" id="last" name="last" /><br>
             </div>
             <div class="formData">
               <label>E-mail</label><br>
-              <span id="text-email" class="dp-none text-red">L'email doit être valide</span>
               <input class="text-control" type="email" id="email" name="email" /><br>
+              <span id="text-email" class="dp-none text-red">L'email doit être valide</span>
             </div>
             <div class="formData">
               <label>Date de naissance</label><br>
-              <span id="text-birth" class="dp-none text-red">Vous devez entrer votre date de naissance.</span>
               <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
+              <span id="text-birth" class="dp-none text-red">Vous devez entrer votre date de naissance.</span>
             </div>
             <div class="formData">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <span id="text-qtt" class="dp-none text-red">Vous devez entrer la quantité de GameOn participé.</span>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+              <span id="text-qtt" class="dp-none text-red">Vous devez entrer la quantité de GameOn participé.</span>
             </div>
             <p class="text-label">Quelles villes ?</p>
-            <span id="text-location" class="dp-none text-red">Vous devez sélectionner la ville où vous souhaitez
-              participer.</span>
             <div class="formData">
               <input class="checkbox-input" type="checkbox" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
@@ -114,15 +112,16 @@
                 <span class="checkbox-icon"></span>
                 Portland</label>
             </div>
-
+            <span id="text-location" class="dp-none text-red">Vous devez sélectionner la ville où vous souhaitez
+              participer.</span>
             <div class="formData">
-              <span id="text-condition" class="dp-none text-red">Vous devez vérifier que vous acceptez les termes et
-                conditions.</span>
               <input class="checkbox-input" type="checkbox" id="checkbox1" checked />
               <label class="checkbox2-label" for="checkbox1" required>
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
               </label>
+              <span id="text-condition" class="dp-none text-red">Vous devez vérifier que vous acceptez les termes et
+                conditions.</span>
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2" />
               <label class="checkbox2-label" for="checkbox2">

@@ -47,15 +47,15 @@ function closeThanks() {
 document.getElementById("gameForm").addEventListener("submit", function validateForm(e) {
   let gameForm = document.getElementById('gameForm');
   let formBground = document.getElementById('formBground');
-  let firstName = document.getElementById('first').value;
+  let firstName = document.getElementById('first');
   let textFirst = document.getElementById('text-first');
-  let lastName = document.getElementById('last').value;
+  let lastName = document.getElementById('last');
   let textLast = document.getElementById('text-last');
-  let email = document.getElementById('email').value;
+  let email = document.getElementById('email');
   let textEmail = document.getElementById('text-email');
-  let birthDate = document.getElementById('birthdate').value;
+  let birthDate = document.getElementById('birthdate');
   let textBirth = document.getElementById('text-birth');
-  let tournamentQtt = document.getElementById('quantity').value;
+  let tournamentQtt = document.getElementById('quantity');
   let textQtt = document.getElementById('text-qtt');
   let location1 = document.getElementById('location1');
   let location2 = document.getElementById('location2');
@@ -74,49 +74,59 @@ document.getElementById("gameForm").addEventListener("submit", function validate
   e.preventDefault();
 
   // Firstname Verifiaction
-  if (firstName.length <= 2 || !firstName.match(regexName)) {
+  if (!firstName.value.match(regexName)) {
     textFirst.classList.add("dp-block");
     textFirst.classList.remove("dp-none");
+    firstName.classList.add("border-red");
     e.preventDefault();
     return false;
   } else {
     textFirst.classList.add("dp-none");
+    firstName.classList.remove("border-red");
   }
   // Lastname Verifiaction
-  if (lastName.length <= 2 || !lastName.match(regexName)) {
+  if (!lastName.value.match(regexName)) {
     textLast.classList.add("dp-block");
     textLast.classList.remove("dp-none");
+    lastName.classList.add("border-red");
     e.preventDefault();
     return false;
   } else {
     textLast.classList.add("dp-none");
+    lastName.classList.remove("border-red");
   }
   // Email Verifiaction
-  if (email == "" || !email.match(regexEmail)) {
+  if (!email.value.match(regexEmail)) {
     textEmail.classList.add("dp-block");
     textEmail.classList.remove("dp-none");
+    email.classList.add("border-red");
     e.preventDefault();
     return false;
   } else {
     textEmail.classList.add("dp-none");
+    email.classList.remove("border-red");
   }
   // Birthdate Verifiaction
-  if (birthDate == "") {
+  if (birthDate.value == "") {
     textBirth.classList.add("dp-block");
     textBirth.classList.remove("dp-none");
+    birthDate.classList.add("border-red");
     e.preventDefault();
     return false;
   } else {
     textBirth.classList.add("dp-none");
+    birthDate.classList.remove("border-red");
   }
   // Tounament quantitie Verifiaction
-  if (tournamentQtt == "") {
+  if (tournamentQtt.value == "") {
     textQtt.classList.add("dp-block");
     textQtt.classList.remove("dp-none");
+    tournamentQtt.classList.add("border-red");
     e.preventDefault();
     return false;
   } else {
     textQtt.classList.add("dp-none");
+    tournamentQtt.classList.remove("border-red");
   }
   // Tournament location Verifiaction
   if (!location1.checked && !location2.checked && !location3.checked && !location4.checked && !location5.checked && !location6.checked) {
